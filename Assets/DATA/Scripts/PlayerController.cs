@@ -30,9 +30,9 @@ public class PlayerController : MonoBehaviour
     private void InitializeController()
     {
 
-        _playerCamera = transform.root.GetComponentInChildren<Camera>();
-        _characterController = transform.root.GetComponentInChildren<CharacterController>();
-        _inventory = transform.root.GetComponentInChildren<Inventory>();
+        _playerCamera = GetComponentInChildren<Camera>();
+        _characterController = GetComponentInChildren<CharacterController>();
+        _inventory = GetComponentInChildren<Inventory>();
 
         _hud = FindObjectOfType<HUDManager>();
 
@@ -219,17 +219,7 @@ public class PlayerController : MonoBehaviour
 
     private Vector3 FindDropLocation() 
     {
-        Vector3 start = _playerCamera.transform.position;
-        Vector3 direction = _playerCamera.transform.forward;
-        float maxDistance = 1.0f; 
-        RaycastHit hit;
-
-        if (Physics.Raycast(start, direction, out hit, maxDistance))
-        {         
-            return hit.point - direction * 0.5f;
-        }
-     
-        return start + direction * maxDistance;
+        return _playerCamera.transform.position + _playerCamera.transform.forward * (_characterController.radius * 1.1f);      
     } 
 
 
