@@ -75,7 +75,7 @@ public class Door : MonoBehaviour, IInteract
     public void OnAimExit(PlayerController Controller)
     {
         playerIsAiming = false;
-        Controller = null;
+        _playerController = null;
         if (_outline) _outline.enabled = false;
     }
 
