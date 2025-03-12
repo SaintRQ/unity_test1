@@ -73,6 +73,7 @@ public class Inventory : MonoBehaviour
                 _hud.UpdateInventoryGrid(_storage);
                 if (_lastSelectedItem) Destroy(_lastSelectedItem);
 
+                _hud.SelectSlot(Mathf.Clamp(_storage.Count - 1, 0,  _storage.Count - 1)); 
                 return true;
             }
         }
