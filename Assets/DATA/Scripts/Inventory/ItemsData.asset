@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5938ae53e604554a8f7c33014d8df37, type: 3}
+  m_Name: ItemsData
+  m_EditorClassIdentifier: 
+  itemsData:
+  - id: box
+    asset: {fileID: 7043412424195061574, guid: c98e2836b69191046a5c41d101db48fd, type: 3}
+    icon: {fileID: 21300000, guid: ae5082e06cd95c947ab01956d8f56700, type: 3}
+    handlePosition: {x: 0, y: -0.1, z: 0.15}
+  - id: coin
+    asset: {fileID: 95623379967653349, guid: 8e64f36e4f3e2354690cc676414e29db, type: 3}
+    icon: {fileID: 21300000, guid: 6ff1f41b224e09e4da352a5cbd693d06, type: 3}
+    handlePosition: {x: 0, y: -0.05, z: 0.15}
+  - id: key
+    asset: {fileID: 2875565215871707252, guid: 72ec91851aa71364eae49fe1e6dc589d, type: 3}
+    icon: {fileID: 21300000, guid: 2b95d0d2dc38ff94aa6ce024c015ecf0, type: 3}
+    handlePosition: {x: 0, y: -0.05, z: 0.15}
