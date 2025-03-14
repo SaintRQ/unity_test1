@@ -1,19 +1,18 @@
-﻿using Unity.VisualScripting;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
     [SerializeField]
-    float moveSpeed = 5f;
+    private float moveSpeed = 5f;
     [SerializeField]
-    float mouseSensitivity = 2f;
+    private float mouseSensitivity = 2f;
 
     [SerializeField]
     LayerMask interactLayerMask;
     [SerializeField]
-    float interactDistance = 3f;
+    private float interactDistance = 3f;
     [SerializeField]
-    float dropForce = 5f;
+    private float dropForce = 5f;
 
     
     public Color outlineColor = Color.white;
@@ -82,14 +81,18 @@ public class PlayerController : MonoBehaviour
     {
         float moveForward = 0f;
         float moveRight = 0f;
+        float speedMultiplier = 1f;
 
         if (Input.GetKey(KeyCode.W)) moveForward = 1f;
         if (Input.GetKey(KeyCode.S)) moveForward = -1f;
         if (Input.GetKey(KeyCode.A)) moveRight = -1f;
         if (Input.GetKey(KeyCode.D)) moveRight = 1f;
 
+        if (moveForward != 0 && moveRight != 0) speedMultiplier = 0.71f;
+
+
         Vector3 move = transform.right * moveRight + transform.forward * moveForward;
-        _characterController.Move(move * moveSpeed * Time.deltaTime);
+        _characterController.Move(move * moveSpeed * speedMultiplier * Time.deltaTime);
     }
     private void HandleMouseLook()
     {
